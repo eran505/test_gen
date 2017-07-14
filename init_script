@@ -1,3 +1,0 @@
-#!/bin/bash
-print 'starting....'
-python evo_call.py 
