@@ -1,5 +1,5 @@
 
-import glob, os
+import glob, os ,sys
 
 
 
@@ -62,7 +62,16 @@ def single_call_EvoSuite(evo_name,evo_path,classes_list,time,dis_path):
         break
 
 
+if len(sys.argv) == 5 :
+    v_path = sys.argv[1]
+    v_evo_name = sys.argv[2]
+    v_evo_path = sys.argv[3]
+    v_dis_path = sys.argv[4]
+    v_time = sys.argv[5]
+    target_list = get_all_class(v_path)
+    single_call_EvoSuite(v_evo_name,v_evo_path,target_list,v_time,v_dis_path)
 
+print "miss argv (-Path -EvoName -EvoPath -DistPath -Time)"
 
 path_1 = "/home/eran/thesis/Tutorial/Tutorial_Experiments/target/classes/tutorial/"
 
@@ -78,6 +87,6 @@ evo_st_name ="evosuite-standalone-runtime-1.0.4.jar"
 
 dis_path = "/home/eran/Desktop/evo_result/"
 
-target_list = get_all_class(path_2)
+#target_list = get_all_class(path_2)
 
-single_call_EvoSuite(evo_name_sanpshot,evo_path,target_list,'5',dis_path)
+#single_call_EvoSuite(evo_name_sanpshot,evo_path,target_list,'5',dis_path)
